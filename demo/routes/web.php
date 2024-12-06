@@ -7,15 +7,19 @@ Route::get('/', function () {
 });
 
 
-Route::get('/about', function () {
-    return view('about');
+Route::prefix('page')->group(function(){
+
+    
 });
 
-Route::get('/post/{id?}', function (string $id = null) {
-    if ($id) {
-        return "<h1>Post id is {$id} </h1>";
-    } else {
+Route::get('/ram', function () {
+    return view('pages.about');
+})->name("aboutpage");
 
-        return "<h1>Post id is not available </h1>";
-    }
-});
+Route::get('/shyam', function (string $id = null) {
+    return view("pages.post");
+})->name('postpage');
+
+Route::get("/sssss",function(){
+    return view("pages.gallery");
+})->name("gallery");
