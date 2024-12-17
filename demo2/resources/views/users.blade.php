@@ -7,8 +7,13 @@
     <title>user file</title>
 </head>
 <body>
-    {{-- <h3> {{$user}} </h3>
-    <h3>Your city is {{$city}} </h3> --}}
     <h3>User page</h3>
+
+    @foreach ($user as $id => $value )
+
+        <h3> {{$id}}  {{ $value['name']}} | {{ $value['email']}} | {{ $value['phone']}}  </h3>
+        
+    @endforeach
+
 </body>
 </html>
